@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True Reads</title>
+
+    <!-- boostrap css files -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/afd6aa68df.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- header section -->
+
+    <section id="header">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container">
+            <a href="#" class="navbar-brand">True Reads</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a href="/" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/" class="nav-link">TOP RATED</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/recommend.html" class="nav-link">SEARCH SIMILAR</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#foot" class="nav-link">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- main section or some bs like that -->
+    <section class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="rated-name">Search Similar books</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <form action="/recommend_books" method="post">
+          <button class="btn-search"><i class="fas fa-search"></i></button>
+          <input
+            name="user_input"
+            type="text"
+            class="input-search"
+            placeholder="Type a book to Search..."
+          /><br />
+        </form>
+      </div>
+
+
+      {% if data %}
+      <div class="card-folder-1">
+      {% for j in data %}
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="{{ j[2] }}"
+          />
+          <p class="card-font"> {{ j[0] }} </p>
+          <h4 class="card-font">{{ j[1] }}</h4>
+        </div>
+      {% endfor %}
+      </div>
+      {% endif %}
+
+
+      
+
+      <!-- test -->
+
+
+
+    </section>
+
+    <div class="footer-basic" id="foot">
+      <footer>
+          <div class="social">
+          <a href="https://www.instagram.com/om.deshmukh02/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+          <a href="https://github.com/omd02" target="_blank"><i class="icon ion-social-github"></i></a>
+          <a href="https://in.pinterest.com/omd142002/_saved/" target="_blank"><i class="icon ion-social-pinterest"></i></a>
+          <a href="https://en.wikipedia.org/wiki/The_Communist_Manifesto" target="_blank"><i class="icon ion-social-google"></i></a>
+        </div>
+          <p class="copyright">Check out my socials!</p>
+      </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True Reads</title>
+
+    <!-- boostrap css files -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- header section -->
+
+    <section id="header">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container">
+            <a href="#" class="navbar-brand">True Reads</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a href="#about" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#top" class="nav-link">TOP RATED</a>
+                </li>
+                <li class="nav-item">
+                  <a href="recommend.html" class="nav-link">SEARCH SIMILAR</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#foot" class="nav-link">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="main">
+      <!-- about page -->
+
+      <div class="container" id ="about">
+        <div class="row">
+          <div class="col-sm-12-md-6">
+            <h2>ABOUT</h2>
+            <p>
+              Welcome to True Reads, where the rating of each book is displayed
+              along with a feature to search similar books. It has two possible
+              choice, 'Top Rated' and 'Search similar' both of these show their
+              respective results. You should also know that this website has a
+              certain limitation, that it can only display certain books as per
+              the dataset, so if you don't see your book in this try to check
+              it's name and type it correctly or it simply does not exist on the
+              dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- top rated part -->
+
+      <div class="container" id="top">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="rated-name">TOP RATED BOOKS</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-folder">
+        {% for i in range(0,5) %}
+
+        <div class="card">
+          <img class="card-img-top" src="{{ image[i] }}" />
+          <p class="card-font">{{ book_name[i] }}</p>
+          <h4 class="card-font">{{ author[i] }}</h4>
+          <h4 class="card-font">Votes - {{ reads[i] }}</h4>
+          <h4 class="card-font">Rating - {{ rating[i] }}</h4>
+        </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="card-folder">
+        {% for i in range(5,10) %}
+
+        <div class="card">
+          <img class="card-img-top" src="{{ image[i] }}" />
+          <p class="card-font">{{ book_name[i] }}</p>
+          <h4 class="card-font">{{ author[i] }}</h4>
+          <h4 class="card-font">Votes - {{ reads[i] }}</h4>
+          <h4 class="card-font">Rating - {{ rating[i] }}</h4>
+        </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="card-folder">
+        {% for i in range(10,15) %}
+
+        <div class="card">
+          <img class="card-img-top" src="{{ image[i] }}" />
+          <p class="card-font">{{ book_name[i] }}</p>
+          <h4 class="card-font">{{ author[i] }}</h4>
+          <h4 class="card-font">Votes - {{ reads[i] }}</h4>
+          <h4 class="card-font">Rating - {{ rating[i] }}</h4>
+        </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="card-folder">
+        {% for i in range(15,20) %}
+        <div class="card">
+          <img class="card-img-top" src="{{ image[i] }}" />
+          <p class="card-font">{{ book_name[i] }}</p>
+          <h4 class="card-font">{{ author[i] }}</h4>
+          <h4 class="card-font">Votes - {{ reads[i] }}</h4>
+          <h4 class="card-font">Rating - {{ rating[i] }}</h4>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- testing -->
+
+    <div class="footer-basic" id="foot">
+      <footer>
+          <div class="social">
+          <a href="https://www.instagram.com/om.deshmukh02/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+          <a href="https://github.com/omd02" target="_blank"><i class="icon ion-social-github"></i></a>
+          <a href="https://in.pinterest.com/omd142002/_saved/" target="_blank"><i class="icon ion-social-pinterest"></i></a>
+          <a href="https://en.wikipedia.org/wiki/The_Communist_Manifesto" target="_blank"><i class="icon ion-social-google"></i></a>
+        </div>
+          <p class="copyright">Check out my socials!</p>
+      </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
